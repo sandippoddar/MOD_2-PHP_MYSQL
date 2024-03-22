@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,body {
+  font-size: 16px;
+  font-family: Roboto,sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #201658;
+}
+
+.container {
+  margin-top: 100px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+label,p {
+  font-size: 20px;
+}
+
+h1,p,label {
+  color: #fff;
+}
+
+a{
+  color: #98ABEE;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 40px;
+  border: 2px solid #98ABEE;
+}
+
+form input {
+  width: 100%;
+  padding: 10px 5px;
+  font-size: 20px;
+}
+
+form input:focus {
+  outline: none;
+  border: none;
+  background-color: #98ABEE;
+}
+
+form input[type = 'submit'] {
+  background-color: #98ABEE;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 800;
+  border: 1px solid #98ABEE;
+  cursor: pointer;
+  transition: 0.2s ease all;
+}
+
+form input[type = 'submit']:hover {
+  color: #000;
+}
+
+.Reset,.SignIn {
+  text-align: right;
+}
+
+button a {
+  padding: 10px 20px;
+  display: inline-block;
+  background-color: #98ABEE;
+  color: #000;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+button {
+  width: fit-content;
+  text-align: right;
+}
+.error h1 {
+  padding: 20px 0;
+}
