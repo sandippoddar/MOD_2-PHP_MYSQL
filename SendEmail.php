@@ -1,6 +1,9 @@
 <?php
 require 'vendor/autoload.php';
+require_once 'DotEnvHandler.php';
 use PHPMailer\PHPMailer\PHPMailer;
+$dotOb = new DotenvHandler();
+$dotOb->dotEnv();
 
 /**
  * This class Implements Sending mail while Reset Password and Sending OTP.
@@ -30,8 +33,8 @@ class SendEmail {
     $this->mail->isSMTP();
     $this->mail->Host = 'smtp.gmail.com';
     $this->mail->SMTPAuth = TRUE;
-    $this->mail->Username = 'sandip.poddar@innoraft.com';
-    $this->mail->Password = 'pbhcctzzenyutbsj';
+    $this->mail->Username = $_ENV['emailUser'];
+    $this->mail->Password = $_ENV['emailPass'];
     $this->mail->SMTPSecure = 'ssl';
     $this->mail->Port = 465;
     $this->mail->setFrom('sandip.poddar@innoraft.com');

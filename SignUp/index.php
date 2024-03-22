@@ -1,26 +1,26 @@
 <?php
 
-  session_start();
-  require '../Database/Query.php';
-  if (isset($_SESSION['flag'])) {
-    header('location: ../Pager.php');
-  }
-  if (isset($_POST['login'])) {
-    $emailUser = $_POST['emailUser'];
-    $password = $_POST['password'];
-    $obLogin = new Query();
-    $isSignUp = $obLogin->LoginSelect($emailUser);
+session_start();
+require '../Database/Query.php';
+if (isset($_SESSION['flag'])) {
+  header('location: ../Pager.php');
+}
+if (isset($_POST['login'])) {
+  $emailUser = $_POST['emailUser'];
+  $password = $_POST['password'];
+  $obLogin = new Query();
+  $isSignUp = $obLogin->LoginSelect($emailUser);
 
-    if (password_verify($password, $isSignUp) && $isSignUp) {
-      $_SESSION['flag'] = 1;
-      header("location: ../Pager.php");
-      exit;
-    }
-    else {
-      session_destroy();
-      $isSignUp = FALSE;
-    }
+  if (password_verify($password, $isSignUp) && $isSignUp) {
+    $_SESSION['flag'] = 1;
+    header("location: ../Pager.php");
+    exit;
   }
+  else {
+    session_destroy();
+    $isSignUp = FALSE;
+  }
+}
   
 ?>
 <!DOCTYPE html>
